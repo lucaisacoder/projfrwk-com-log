@@ -8,7 +8,7 @@ list(APPEND ADD_PRIVATE_INCLUDE "inc")
 
 ############ Add source files #################
 list(APPEND ADD_SRCS  
-        src/ut_main.c
+        src/log_ut.c
         ../code/src/log.c
     )
 ###############################################

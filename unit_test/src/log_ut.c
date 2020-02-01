@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "log_ut.h"
-#include "log.h"
+#include "log_api.h"
 
 int main()
 {
