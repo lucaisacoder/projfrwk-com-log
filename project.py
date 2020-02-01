@@ -2,17 +2,15 @@
 #-*- coding = utf-8 -*-
 import sys, os
 
-sdk_env_name = "PROJECT_SDK_PATH"
+# get project name
+project_path = sys.path[0]
+project_name = os.path.basename(project_path)
 
-# get sdk absolute path
-sdk_path = os.path.abspath(sys.path[0] + "/../../")
-try:
-    sdk_path = os.environ[sdk_env_name]
-except Exception:
-    pass
-print(">>> SDK_PATH:{}".format(sdk_path))
+# get sdk path, and exec project.py
+sdk_path = os.path.abspath(project_path + "/../../")
+scripts_path = sdk_path + "/tools/scripts"
+real_project_file = scripts_path + "/project.py"
 
-# execute project script from sdk
-project_file_path = sdk_path + "/components/log/cmake/project.py"
-with open(project_file_path) as f:
+sys.path.append(scripts_path)
+with open(real_project_file) as f:
     exec(f.read())
