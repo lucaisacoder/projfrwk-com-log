@@ -23,6 +23,16 @@ endif()
 # preprocessor definitions for whole project
 add_definitions(-DOSAL_DEFINE=1)
 
+# 设置cmake工具路径
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${SDK_PATH}/tools/cmake/find)
+
+find_package(OSAL REQUIRED)
+if(OSAL_FOUND)
+    include_directories(${OSAL_INCLUDE_DIRS})
+else()
+    message("not found OSAL")
+endif()
+
 # project name
 include(${SDK_PATH}/tools/cmake/util/project.cmake)
 project(log)
