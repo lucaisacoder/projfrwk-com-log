@@ -1,7 +1,7 @@
 menu "COM LOG Configuration"
-    config COM_LOG_INCLUDE_STATIC_LIB
-        bool "Enable include static lib(from gcc)"
+    config COM_LOG_DEFINITION
+        bool "Enable COM LOG Definition"
         default n
         help
-            Enable include static lib(from gcc)
+            Enable COM LOG Definition
 endmenu
